@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+bool esPrimo(int numero, int divisor = 2) {
+    if (numero <= 1) return false;
+    if (divisor * divisor > numero) return true;
+    if (numero % divisor == 0) return false;
+    
+    return esPrimo(numero, divisor + 1);
+}
+
+int main() {
+    int n;
+    cout << "ingrese hasta que numero quiere verificar: ";
+    cin >> n;
+    cout << "numeros primos entre 1 y " << n << ": ";
+    
+    for (int i = 2; i <= n; i++) {
+        if (esPrimo(i)) {
+            cout << i << " ";
+        }
+    }
+    
+    return 0;
+}
