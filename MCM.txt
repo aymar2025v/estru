@@ -1,25 +1,23 @@
 #include <iostream>
 using namespace std;
 
-// MCD recursivo
 int mcd(int a, int b) {
     if (b == 0)
         return a;
     return mcd(b, a % b);
 }
 
-// MCM usando el MCD
 int mcm(int a, int b) {
     return (a * b) / mcd(a, b);
 }
 
 int main() {
-    int num1, num2;
+    int a, b;
 
     cout << "Ingrese dos numeros: ";
-    cin >> num1 >> num2;
+    cin >> a >> b;
 
-    cout << "El MCM es: " << mcm(num1, num2) << endl;
+    cout << "El MCM es: " << mcm(a, b) << endl;
 
     return 0;
 }
