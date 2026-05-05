@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+bool esPrimoOptimizado(int numero, int divisor = 2) {
+    if (numero <= 1) {
+        return false;
+    }
+
+    if (divisor * divisor > numero) {
+        return true;
+    }
+
+    if (numero % divisor == 0) {
+        return false;
+    }
+
+    return esPrimoOptimizado(numero, divisor + 1);
+}
+
+int main() {
+    
+    int n;
+    cout << "Ingrese un número entero positivo: ";
+    cin >> n;
+    
+    if (esPrimoOptimizado(n)) {
+        cout << n << " ES un número primo." << endl;
+    } else {
+        cout << n << " NO es un número primo." << endl;
+    }
+    
+    return 0;
+}
